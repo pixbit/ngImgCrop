@@ -2,10 +2,10 @@
  * ngImgCrop v0.3.2
  * https://github.com/alexk111/ngImgCrop
  *
- * Copyright (c) 2014 Alex Kaul
+ * Copyright (c) 2015 Alex Kaul
  * License: MIT
  *
- * Generated at Wednesday, December 3rd, 2014, 3:54:12 PM
+ * Generated at Wednesday, November 4th, 2015, 1:44:54 PM
  */
 (function() {
 'use strict';
@@ -1857,18 +1857,6 @@ crop.directive('imgCrop', ['$timeout', 'cropHost', 'cropPubSub', function($timeo
         updateResultImage(scope);
       });
 
-      // Update CropHost dimensions when the directive element is resized
-      scope.$watch(
-        function () {
-          return [element[0].clientWidth, element[0].clientHeight];
-        },
-        function (value) {
-          cropHost.setMaxDimensions(value[0],value[1]);
-          updateResultImage(scope);
-        },
-        true
-      );
-
       // Destroy CropHost Instance when the directive is destroying
       scope.$on('$destroy', function(){
           cropHost.destroy();
@@ -1876,4 +1864,5 @@ crop.directive('imgCrop', ['$timeout', 'cropHost', 'cropPubSub', function($timeo
     }
   };
 }]);
+
 }());
